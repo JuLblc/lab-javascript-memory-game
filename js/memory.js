@@ -13,9 +13,10 @@ class MemoryGame {
 
     for (let i = 0; i < this.cards.length; i++) {
       let rand = Math.trunc(Math.random() * (i + 1));
-      let shuffledValue = this.cards[i];
-      this.cards[i] = this.cards[rand];
-      this.cards[rand] = shuffledValue;
+      // let shuffledValue = this.cards[i];
+      // this.cards[i] = this.cards[rand];
+      // this.cards[rand] = shuffledValue;
+      [this.cards[i], this.cards[rand]] = [this.cards[rand], this.cards[i]];
     }
     return this.cards;
   }

@@ -58,7 +58,8 @@ window.addEventListener('load', event => {
               //Verif si jeu terminé
               if(memoryGame.isFinished()){
                 console.log("gagné");
-              }             
+              }
+              memoryGame.pickedCards = [];   //RAZ cartes choisies pour pouvoir en choisir d'autres          
           }
           else {
             document.querySelector('#pairs-clicked').innerHTML = memoryGame.pairsClicked;// incrémentation du nbr de tentatives
@@ -69,12 +70,11 @@ window.addEventListener('load', event => {
               //Cartes se retournent de nouveau
               pickedCard.classList.toggle("turned");
               })
+              memoryGame.pickedCards = []; //RAZ cartes choisies pour pouvoir en choisir d'autres
             },1000)
           }
-          memoryGame.pickedCards = [];
         }
       }      
-      console.log(`Card clicked: ${card}`);
     });
   });
 });
